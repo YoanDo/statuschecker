@@ -1,4 +1,4 @@
-class PingController < ApplicationController
+class PingsController < ApplicationController
 before_action :set_ping, only: [ :create ]
 
   def index

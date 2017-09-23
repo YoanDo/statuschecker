@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'service#index'
+  root to: 'services#index'
     resources :services do |variable|
     resources :pings, only: [:new, :create]
   end

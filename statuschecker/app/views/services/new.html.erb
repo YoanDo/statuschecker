@@ -1,0 +1,16 @@
+<h1>Service#new</h1>
+<p>Find me in app/views/service/new.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h1>Add a new service to check</h1>
+      <%= simple_form_for (@service) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :web_api %>
+      <%= f.input :json_path %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
