@@ -7,9 +7,20 @@
   <p>Json path - <%= s.json_path %></p>
   <p>id - <%= s.id %></p>
 
+<<<<<<< HEAD
 
 
 <%= Ping.new(up: true, service: s) %>
+=======
+<% url = s.web_api
+    fb_status_serialized = open(url).read
+    fb_status = JSON.parse(fb_status_serialized) %>
+    <% if fb_status['current']['health'] == 1 %>
+      <p>YATA</p>
+    <% end %>
+
+<%= Ping.create(up: true, service: s) %>
+>>>>>>> 63beee2595c3cd00bd5809b5f407d1505378ae4c
 
 
 
@@ -21,6 +32,10 @@
   <% end %>
 
 
+<<<<<<< HEAD
     <% end %>
+=======
+<% end %>
+>>>>>>> 63beee2595c3cd00bd5809b5f407d1505378ae4c
 
 <%= link_to 'Add a new service', new_service_path, class: "see-receipe" %>
