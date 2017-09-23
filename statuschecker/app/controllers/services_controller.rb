@@ -1,4 +1,4 @@
-class ServiceController < ApplicationController
+class ServicesController < ApplicationController
 
   before_action :set_service, only: [:edit, :show, :destroy]
 
