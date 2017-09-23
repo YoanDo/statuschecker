@@ -1,32 +1,31 @@
 
-<%= @services.each do | s | %>
-  <p><%= s.name %></p>
-  <p><%= s.web_api %></p>
-  <p><%= s.json_path %></p>
-  <p><%= s.id %></p>
+
+
+<% @services.each do | s | %>
+<h3>Service: <%= s.name %></h3>
+  <p>API address - <%= s.web_api %></p>
+  <p>Json path - <%= s.json_path %></p>
+  <p>id - <%= s.id %></p>
+
+<% url = s.web_api
+    fb_status_serialized = open(url).read
+    fb_status = JSON.parse(fb_status_serialized) %>
+    <% if fb_status['current']['health'] == 1 %>
+      <p>YATA</p>
+    <% end %>
+
+<%= Ping.create(up: true, service: s) %>
 
 
 
--
-
-
- <p>|||</p> <%= Ping.new(up: true, service: s ) %> <p>|||</p>
-
--
-
-
-
+<p>LAST PING:</p>
   <% @pings.each do | p | %>
     <% if p.service_id == s.id  %>
-    <p> <%= p %> </p>
+    <p> <%= p %> <%= p.created_at %> <%= p.service_id %> <%= p.up %> </p>
   <% end %>
   <% end %>
 
 
 <% end %>
-
-
-
-
 
 <%= link_to 'Add a new service', new_service_path, class: "see-receipe" %>
