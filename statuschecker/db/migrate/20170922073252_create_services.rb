@@ -3,7 +3,7 @@ class CreateServices < ActiveRecord::Migration[5.0]
     create_table :services do |t|
       t.string :name
       t.string :web_api
-      t.string :test
+      t.string :json_path
 
       t.timestamps
     end

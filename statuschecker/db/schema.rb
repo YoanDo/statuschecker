@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170922073721) do
   create_table "services", force: :cascade do |t|
     t.string   "name"
     t.string   "web_api"
-    t.string   "test"
+    t.string   "json_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
