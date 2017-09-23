@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'service#index'
+    resources :services do |variable|
+    resources :pings, only: [:new, :create]
+  end
+  resources :pings, only: [ :destroy ]
 end

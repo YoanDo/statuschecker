@@ -1,0 +1,30 @@
+
+<%= @services.each do | s | %>
+  <p><%= s.name %></p>
+  <p><%= s.web_api %></p>
+  <p><%= s.json_path %></p>
+  <p><%= s.id %></p>
+
+
+
+-
+
+
+ <p>|||</p> <%= Ping.new(up: true, service: s ) %> <p>|||</p>
+
+-
+
+
+
+  <% @pings.each do | p | %>
+    <% if p.service_id == s.id  %>
+    <p> <%= p %> </p>
+  <% end %>
+  <% end %>
+
+
+<% end %>
+
+
+
+
