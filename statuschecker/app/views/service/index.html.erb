@@ -10,7 +10,7 @@
 -
 
 
- <p>|||</p> <%= Ping.new(up: true, service: s ) %> <p>|||</p>
+ <p>|||</p> <%= Ping.create(up: true, service: s ) %> <p>|||</p>
 
 -
 
@@ -26,5 +26,6 @@
 <% end %>
 
 
+<%= link_to 'Add a new service', new_service_path, class: "see-receipe" %>
 
 
