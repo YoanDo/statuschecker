@@ -1,4 +1,4 @@
-class ServiceController < ApplicationController
+class ServicesController < ApplicationController
 
   before_action :set_service, only: [:edit, :show, :destroy]
 
@@ -21,7 +21,7 @@ class ServiceController < ApplicationController
     @service = Service.new(service_params)
     @service.save
       if @service.save
-    redirect_to service_path(@service)
+    redirect_to services_path
     else
       render :new
     end
