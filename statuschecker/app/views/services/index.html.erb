@@ -10,8 +10,12 @@
         <div class="card-last-check">
             <ul>
               <% @pings.each do | p | %>
-                <% if p.service_id == s.id  %>
-                <li> <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %> <%= p.up %> </li>
+                <% if p.service_id == s.id && p.up == true %>
+                  <li class="green"> <i class="fa fa-check-circle" aria-hidden="true"></i> <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %>
+                  </li>
+                <% elsif p.service_id == s.id && p.up == false %>
+                  <li class="red"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %>
+ </li>
               <% end %>
               <% end %>
             </ul>

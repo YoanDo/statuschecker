@@ -29,10 +29,6 @@
 background-color: yellow
 }
 
-.card li {
-  color: $black;
-}
-
 .card-last-check {
   background-color: pink;
 }
@@ -50,3 +46,10 @@ background-color: yellow
   height: 500px;
 }
 
+.green {
+  color: $green;
+}
+
+.red {
+  color: $red;
+}
