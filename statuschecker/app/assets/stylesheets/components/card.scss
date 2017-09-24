@@ -1,0 +1,61 @@
+.cardboard {
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 1%;
+  flex-flow: row wrap;
+
+}
+
+.card {
+  color: $black;
+  margin: 2% auto;
+  padding: 2%;
+  max-height: 80vh;
+
+  @media (max-width: 4000px) {
+      flex-basis: 30%;
+  }
+
+    @media (max-width: 640px) {
+      flex-basis: 50%;
+      background-color: blue;
+  }
+
+    @media (max-width: 375px) {
+      flex-basis: 100%;
+      background-color: yellow;
+  }
+
+background-color: yellow
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card-last-check {
+  background-color: pink;
+  overflow:scroll; height:400px
+}
+
+.card-description h4 {
+  color:white;
+}
+
+
+.card .card-content .card-title {
+  margin-bottom: 30px;
+}
+
+.card.content{
+  height: 500px;
+}
+
+.green {
+  color: $green;
+}
+
+.red {
+  color: $red;
+}
