@@ -5,3 +5,5 @@ Rails.application.routes.draw do
   end
   resources :pings, only: [ :destroy ]
 end
+
+wheneverize .
