@@ -9,8 +9,9 @@
 
 .card {
   color: $black;
-  margin-bottom: 2%;
+  margin: 2% auto;
   padding: 2%;
+  max-height: 80vh;
 
   @media (max-width: 4000px) {
       flex-basis: 30%;
@@ -29,8 +30,13 @@
 background-color: yellow
 }
 
+.card h2 {
+  margin-top: 0;
+}
+
 .card-last-check {
   background-color: pink;
+  overflow:scroll; height:400px
 }
 
 .card-description h4 {

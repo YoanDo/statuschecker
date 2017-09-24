@@ -4,17 +4,15 @@
     <!-- card section -->
     <div class="card">
       <div class="card-content ">
-        <span class="card-title grey-text "><%= s.name %>
-
-        </i></span>
+        <h2>-<%= s.name %>-</h2>
         <div class="card-last-check">
             <ul>
               <% @pings.each do | p | %>
                 <% if p.service_id == s.id && p.up == true %>
-                  <li class="green"> <i class="fa fa-check-circle" aria-hidden="true"></i> <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %>
+                  <li class="green"><i class="fa fa-check-circle" aria-hidden="true"></i>   <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %>
                   </li>
                 <% elsif p.service_id == s.id && p.up == false %>
-                  <li class="red"> <i class="fa fa-exclamation-circle" aria-hidden="true"></i> <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %>
+                  <li class="red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %>
  </li>
               <% end %>
               <% end %>

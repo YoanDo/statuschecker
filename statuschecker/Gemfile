@@ -60,6 +60,8 @@ end
   gem "simple_form"
   gem "autoprefixer-rails"
 
+  gem 'whenever'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-plugin'
 end
