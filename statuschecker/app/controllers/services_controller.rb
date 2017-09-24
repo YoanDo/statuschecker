@@ -5,6 +5,7 @@ class ServicesController < ApplicationController
   def index
     @services = Service.all
     @pings = Ping.all
+    @fb_status = FacebookStatusService.status
   end
 
   def new

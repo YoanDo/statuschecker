@@ -1,4 +1,10 @@
 
+   <% url = 'https://www.facebook.com/platform/api-status/'
+    fb_status_serialized = open(url).read
+    fb_status = JSON.parse(fb_status_serialized) %>
+
+<!--     if fb_status['current']['health'] == 1
+      test_ping = true -->
 
 
 <% @services.each do | s | %>
@@ -7,10 +13,13 @@
   <p>Json path - <%= s.json_path %></p>
   <p>id - <%= s.id %></p>
 
-<%= Ping.new(up: true, service: s) %>
-    <% end %>
+<% if @fb_status == 1 %>
+  <%= Ping.create(up: true, service: s) %>
+<% else %>
+   <%= Ping.create(up: false, service: s) %>
+<% end %>
 
-<%= Ping.create(up: true, service: s) %>
+
 
 
 
