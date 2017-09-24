@@ -2,12 +2,15 @@ namespace :fb_ping do
 desc "New fb ping"
 task check: :environment do
 
-   @services.each do | s |
-
-    if @fb_status == 1
-      Ping.create(up: true, service: s)
-    else
-      Ping.create(up: false, service: s)
+  Service.all.each do | s |
+    if s.name == 'Facebook'
+      if FacebookStatusService.status === 1
+        Ping.create(up: true, service: s)
+        puts  'FB service is up  ✅'
+      else
+        Ping.create(up: false, service: s)
+        puts  'FB service is down  ❌'
+      end
     end
   end
 end

@@ -1,38 +1,20 @@
-
-   <% url = 'https://www.facebook.com/platform/api-status/'
-    fb_status_serialized = open(url).read
-    fb_status = JSON.parse(fb_status_serialized) %>
-
-<!--     if fb_status['current']['health'] == 1
-      test_ping = true -->
-
-
 <% @services.each do | s | %>
-<h3>Service: <%= s.name %></h3>
-  <p>API address - <%= s.web_api %></p>
-  <p>Json path - <%= s.json_path %></p>
-  <p>id - <%= s.id %></p>
+<div class="card">
+  <h3>Service: <%= s.name %></h3>
+    <p>API address - <%= s.web_api %></p>
+    <p>Json path - <%= s.json_path %></p>
+    <p>id - <%= s.id %></p>
 
-<% if @fb_status == 1 %>
-  <%= Ping.create(up: true, service: s) %>
-<% else %>
-   <%= Ping.create(up: false, service: s) %>
-<% end %>
-
-
-
-
-
-<p>LAST PING:</p>
-  <% @pings.each do | p | %>
-    <% if p.service_id == s.id  %>
-    <p> <%= p %> <%= p.created_at %> <%= p.service_id %> <%= p.up %> </p>
-  <% end %>
-  <% end %>
-
-
-
+  <p>LAST PING:</p>
+  <ul>
+    <% @pings.each do | p | %>
+      <% if p.service_id == s.id  %>
+      <li> <%= p %> <%= p.created_at %> <%= p.service_id %> <%= p.up %> </li>
     <% end %>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
 
 <%= link_to 'Add a new service', new_service_path, class: "see-receipe" %>

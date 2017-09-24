@@ -6,8 +6,6 @@ class FacebookStatusService
   def self.status
       json_response = JSON.parse(open(@base_api_url).read)
       @status = json_response["current"]["health"]
-      # Boolean status
-      # @status = json_response["current"]["subject"]
   end
 
 end
