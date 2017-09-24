@@ -1,0 +1,52 @@
+.cardboard {
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 1%;
+  flex-flow: row wrap;
+
+}
+
+.card {
+  color: $black;
+  margin-bottom: 2%;
+  padding: 2%;
+
+  @media (max-width: 4000px) {
+      flex-basis: 30%;
+  }
+
+    @media (max-width: 640px) {
+      flex-basis: 50%;
+      background-color: blue;
+  }
+
+    @media (max-width: 375px) {
+      flex-basis: 100%;
+      background-color: yellow;
+  }
+
+background-color: yellow
+}
+
+.card li {
+  color: $black;
+}
+
+.card-last-check {
+  background-color: pink;
+}
+
+.card-description h4 {
+  color:white;
+}
+
+
+.card .card-content .card-title {
+  margin-bottom: 30px;
+}
+
+.card.content{
+  height: 500px;
+}
+

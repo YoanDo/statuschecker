@@ -1,5 +1,31 @@
+
+<div class="cardboard">
+    <% @services.each do |s|%>
+    <!-- card section -->
+    <div class="card">
+      <div class="card-content ">
+        <span class="card-title grey-text "><%= s.name %>
+
+        </i></span>
+        <div class="card-last-check">
+            <ul>
+              <% @pings.each do | p | %>
+                <% if p.service_id == s.id  %>
+                <li> <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %> <%= p.up %> </li>
+              <% end %>
+              <% end %>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+    <% end %>
+</div>
+
+
+
 <% @services.each do | s | %>
-<div class="card">
+
   <h3>Service: <%= s.name %></h3>
     <p>API address - <%= s.web_api %></p>
     <p>Json path - <%= s.json_path %></p>
@@ -13,7 +39,7 @@
     <% end %>
     <% end %>
   </ul>
-</div>
+
 <% end %>
 
 
