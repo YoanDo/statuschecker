@@ -8,9 +8,10 @@
 }
 
 .card {
-  color: $black;
-  margin: 2% auto;
-  padding: 2%;
+    color: #1E1C1E;
+    margin: 2% 4px;
+    padding: 2%;
+    min-width: 250px;
 
   @media (max-width: 4000px) {
       flex-basis: 30%;
@@ -18,24 +19,25 @@
 
     @media (max-width: 640px) {
       flex-basis: 50%;
-      background-color: blue;
   }
-
-    @media (max-width: 375px) {
-      flex-basis: 100%;
-      background-color: yellow;
-  }
-
-background-color: yellow
 }
 
 .card h2 {
   margin-top: 0;
+  text-align: center;
+  color: white
+}
+
+.card hr {
+  margin-top: 0;
 }
 
 .card-last-check {
-  background-color: pink;
-  overflow:scroll; height:400px
+
+  overflow:scroll;
+  height:400px;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
 }
 
 .card-last-check {
@@ -44,7 +46,7 @@ background-color: yellow
 }
   ul > li {
     transform: rotate(-180deg);
-}
+  }
 }
 
 .card-description h4 {

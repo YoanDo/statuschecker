@@ -1,48 +1,31 @@
-
-<div class="cardboard">
+<div class="content">
+  <div class="top">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+      <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+    </svg> <h1>Checking status</h1>
+  </div>
+  <div class="cardboard">
     <% @services.each do |s|%>
     <!-- card section -->
     <div class="card">
       <div class="card-content ">
-        <h2>-<%= s.name %>-</h2>
+        <h2><%= s.name %></h2>
+        <hr>
         <div class="card-last-check">
-            <ul>
-              <% @pings.each do | p | %>
-                <% if p.service_id == s.id && p.up == true %>
-                  <li class="green"><i class="fa fa-check-circle" aria-hidden="true"></i>   <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %>
-                  </li>
-                <% elsif p.service_id == s.id && p.up == false %>
-                  <li class="red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   <%= p.created_at.strftime("%d.%b.%y - %Ih%M") %> <%= p.service_id %>
- </li>
-              <% end %>
-              <% end %>
-            </ul>
+          <ul>
+            <% @pings.each do | p | %>
+            <% if p.service_id == s.id && p.up == true %>
+            <li class="green"><i class="fa fa-check-circle" aria-hidden="true"></i>   <%= p.created_at.strftime("%d.%b.%y - %Hh%M") %>
+            </li>
+            <% elsif p.service_id == s.id && p.up == false %>
+            <li class="red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   <%= p.created_at.strftime("%d.%b.%y - %Hh%M") %>
+            </li>
+            <% end %>
+            <% end %>
+          </ul>
         </div>
-
       </div>
     </div>
     <% end %>
+  </div>
 </div>
-
-
-
-<% @services.each do | s | %>
-
-  <h3>Service: <%= s.name %></h3>
-    <p>API address - <%= s.web_api %></p>
-    <p>Json path - <%= s.json_path %></p>
-    <p>id - <%= s.id %></p>
-
-  <p>LAST PING:</p>
-  <ul>
-    <% @pings.each do | p | %>
-      <% if p.service_id == s.id  %>
-      <li> <%= p %> <%= p.created_at %> <%= p.service_id %> <%= p.up %> </li>
-    <% end %>
-    <% end %>
-  </ul>
-
-<% end %>
-
-
-<%= link_to 'Add a new service', new_service_path, class: "see-receipe" %>
