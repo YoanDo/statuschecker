@@ -10,6 +10,7 @@ task check: :environment do
       else
         Ping.create(up: false, service: s)
         puts  'Algolia service is down  ❌'
+        AlertMailer.alert(s).deliver_now
       end
     end
   end
