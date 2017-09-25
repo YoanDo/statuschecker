@@ -62,7 +62,8 @@ end
   gem "autoprefixer-rails"
 
   gem 'whenever' , :require => false
-  gem 'Capistrano'
+  gem 'capistrano'
+  gem 'capistrano-ext'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-plugin'
