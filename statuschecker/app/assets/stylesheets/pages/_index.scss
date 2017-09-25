@@ -1,2 +1,36 @@
 // Import page-specific CSS files here.
 @import "home";
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-center;
+  align-items: center;
+
+}
+
+.top {
+  height: 190px;
+  width: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+
+    @media (max-width: 4000px) {
+      h1 {
+        font-size: 4em;
+      }
+  }
+
+    @media (max-width: 640px) {
+
+      margin: auto;
+
+      h1 {
+        font-size: 2em;
+      }
+  }
+}
+

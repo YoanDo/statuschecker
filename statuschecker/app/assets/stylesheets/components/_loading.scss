@@ -1,0 +1,45 @@
+$offset: 187;
+$duration: 4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+
+    @media (max-width: 640px) {
+
+      display: none;
+  }
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash $duration ease-in-out infinite,
+    colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% { stroke: white; }
+  25% { stroke: white; }
+  50% { stroke: white; }
+  75% { stroke: white; }
+  100% { stroke: white; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
+}
