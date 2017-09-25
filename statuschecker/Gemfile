@@ -53,6 +53,7 @@ end
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'whenever-test'
 end
 
   gem "bootstrap-sass"
@@ -60,7 +61,8 @@ end
   gem "simple_form"
   gem "autoprefixer-rails"
 
-  gem 'whenever'
+  gem 'whenever' , :require => false
+  gem 'Capistrano'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-plugin'
